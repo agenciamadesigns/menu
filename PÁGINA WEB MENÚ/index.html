@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafetería del Centro | Catálogo Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <div>
+      <h1>Cafetería del Centro</h1>
+    </div>
+  </div>
+
+  <a href="#catalogo" class="btn-header">Ver menú</a>
+</header>
+
+<section class="hero">
+  <div class="hero-info">
+    <span>Ordena fácil y rápido</span>
+    <h2>Descubre nuestro menú premium</h2>
+    <p>Selecciona tus productos favoritos y envía tu pedido directo por WhatsApp.</p>
+    <a href="#catalogo">Hacer pedido</a>
+  </div>
+</section>
+
+<section class="promos">
+  <div class="promo-card">
+    <h3>🔥 Promo del día</h3>
+    <p>Café + Brownie por solo $75</p>
+  </div>
+</section>
+
+<section class="catalogo" id="catalogo">
+  <div class="section-title">
+    <span>Menú digital</span>
+    <h2>Nuestro catálogo</h2>
+  </div>
+
+  <div class="categorias">
+    <button class="activo" onclick="filtrarProductos('Todos', this)">🍽️ Todos</button>
+    <button onclick="filtrarProductos('Bebidas', this)">☕ Bebidas</button>
+    <button onclick="filtrarProductos('Desayunos', this)">🥞 Desayunos</button>
+    <button onclick="filtrarProductos('Postres', this)">🍰 Postres</button>
+  </div>
+
+  <div class="layout">
+    <div class="productos" id="productos"></div>
+
+    <aside class="carrito">
+      <h3>🛒 Tu pedido</h3>
+      <div id="itemsCarrito" class="items-carrito"></div>
+
+      <div class="total-box">
+        <span>Total:</span>
+        <strong>$<span id="total">0</span></strong>
+      </div>
+
+      <button class="btn-whatsapp" onclick="enviarWhatsApp()">
+        Pedir por WhatsApp
+      </button>
+    </aside>
+  </div>
+</section>
+
+<a class="whatsapp-flotante" href="https://wa.me/526621234567" target="_blank">
+  WhatsApp
+</a>
+
+<script src="app.js"></script>
+</body>
+</html>
