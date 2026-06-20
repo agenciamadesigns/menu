@@ -114,6 +114,9 @@ function eliminarDelCarrito(index) {
 }
 
 function actualizarCarrito() {
+  const miniCantidad = document.getElementById("miniCantidad");
+const miniTotal = document.getElementById("miniTotal");
+const miniCarrito = document.querySelector(".mini-carrito");
   const contenedor = document.getElementById("itemsCarrito");
   const totalSpan = document.getElementById("total");
 
@@ -121,6 +124,17 @@ function actualizarCarrito() {
 
   let total = 0;
 
+  let cantidadTotal = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+let totalMini = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+
+miniCantidad.textContent = cantidadTotal;
+miniTotal.textContent = totalMini;
+
+if (cantidadTotal === 0) {
+  miniCarrito.classList.add("vacio");
+} else {
+  miniCarrito.classList.remove("vacio");
+}
   if (carrito.length === 0) {
     contenedor.innerHTML = `<p style="color:#777;">Aún no has agregado productos.</p>`;
     totalSpan.textContent = "0";
@@ -172,6 +186,29 @@ function enviarWhatsApp() {
 
   window.open(url, "_blank");
 }
+
+function toggleCarrito() {
+  document.querySelector(".carrito").classList.toggle("abierto");
+}
+
+function cerrarCarrito() {
+  document.querySelector(".carrito").classList.remove("abierto");
+}
+
+document.addEventListener("click", function(e){
+
+  const carrito = document.querySelector(".carrito");
+  const miniCarrito = document.querySelector(".mini-carrito");
+
+  if(
+    carrito.classList.contains("abierto") &&
+    !carrito.contains(e.target) &&
+    !miniCarrito.contains(e.target)
+  ){
+    carrito.classList.remove("abierto");
+  }
+
+});
 
 mostrarProductos();
 mostrarDestacados();

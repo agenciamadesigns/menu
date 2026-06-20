@@ -52,6 +52,11 @@
 
     <aside class="carrito">
       <h3>🛒 Tu pedido</h3>
+      <h3>🛒 Tu pedido</h3>
+
+<button class="cerrar-carrito" onclick="cerrarCarrito()">
+  ✕
+</button>
       <div id="itemsCarrito" class="items-carrito"></div>
 
       <div class="total-box">
@@ -71,5 +76,13 @@
 </a>
 
 <script src="app.js"></script>
+
+<div class="mini-carrito" onclick="toggleCarrito()">
+  🛒
+  <div>
+    <strong><span id="miniCantidad">0</span> productos</strong>
+    <p>$<span id="miniTotal">0</span></p>
+  </div>
+</div>
 </body>
 </html>
