@@ -40,18 +40,24 @@
     <h2>Nuestro catálogo</h2>
   </div>
 
-  <div class="categorias">
-    <button class="activo" onclick="filtrarProductos('Todos', this)">🍽️ Todos</button>
-    <button onclick="filtrarProductos('Bebidas', this)">☕ Bebidas</button>
-    <button onclick="filtrarProductos('Desayunos', this)">🥞 Desayunos</button>
-    <button onclick="filtrarProductos('Postres', this)">🍰 Postres</button>
-  </div>
+<div class="categorias">
+  <button class="activo" onclick="filtrarProductos('Todos', this)">🍽️ Todos</button>
+  <button onclick="filtrarProductos('Bebidas', this)">☕ Bebidas</button>
+  <button onclick="filtrarProductos('Desayunos', this)">🥞 Desayunos</button>
+  <button onclick="filtrarProductos('Comida', this)">🍔 Comida</button>
+  <button onclick="filtrarProductos('Postres', this)">🍰 Postres</button>
+</div>
+
+<div class="subcategorias oculto" id="subcategoriasBebidas">
+  <button onclick="filtrarSubcategoria('Calientes', this)">Calientes</button>
+  <button onclick="filtrarSubcategoria('Frías', this)">Frías</button>
+  <button onclick="filtrarSubcategoria('Frappés', this)">Frappés</button>
+</div>
 
   <div class="layout">
     <div class="productos" id="productos"></div>
 
     <aside class="carrito">
-      <h3>🛒 Tu pedido</h3>
       <h3>🛒 Tu pedido</h3>
 
 <button class="cerrar-carrito" onclick="cerrarCarrito()">
@@ -75,14 +81,14 @@
   WhatsApp
 </a>
 
-<script src="app.js"></script>
-
-<div class="mini-carrito" onclick="toggleCarrito()">
+<div class="mini-carrito vacio" onclick="toggleCarrito()">
   🛒
   <div>
     <strong><span id="miniCantidad">0</span> productos</strong>
     <p>$<span id="miniTotal">0</span></p>
   </div>
 </div>
+
+<script src="app.js"></script>
 </body>
 </html>

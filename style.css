@@ -555,3 +555,36 @@ body {
 .cerrar-carrito:hover {
   background: #e5e7eb;
 }
+
+.oculto {
+  display: none !important;
+}
+
+.subcategorias {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: -18px 0 35px;
+}
+
+.subcategorias button {
+  border: none;
+  background: #111;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.subcategorias button.activo {
+  background: #25d366;
+}
+
+.titulo-subseccion {
+  grid-column: 1 / -1;
+  font-size: 28px;
+  margin: 25px 0 5px;
+  color: #111;
+}
